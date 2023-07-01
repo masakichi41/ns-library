@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <title>{キャンパス名}CP - 図書一覧</title>
+</head>
+<body>
+  <header>
+    <div id="search">
+      <input id="search_bar" type="text" placeholder="検索ワード" inputmode="search"/>
+      <button id="search_btn" aria-label="検索ボタン"></button>
+    </div>
+    <div class="search-type">
+      <button class="type-btn" data-type="1">タイトル</button>
+      <button class="type-btn" data-type="2">タグ</button>
+      <button class="type-btn active" data-type="3">キーワード</button>
+    </div>
+  </header>
+  <main>
+    <div id="result_background_img">
+      <noscript class="bold">JavaScriptを有効にしてください。</noscript>
+    </div>
+    <div id="result_container">
+    </div>
+    <button id="to_top">
+      TOP
+    </button>
+  </main>
+  <div id="modal_container">
+    <span id="modal_close">閉じる</span>
+  </div>
+  <div id="log_container">
+  </div>
+  <footer>
+    <div class="footer-section">
+      <nav>
+        <a href="./{file名}">トップ</a>
+        <a href="./{file名}?type=all">全ての図書</a>
+        <a href="./faq" target="_blank">よくある質問</a>
+        <a href="https://forms.gle/MLAnrJkb94JkJka8A" target="_blank">お問い合わせ</a>
+        <a href="./site-terms-of-use" target="_blank">サイト使用条件</a>
+      </nav>
+      <p>&copy; 2023 LookUP. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="./js/jquery-3.7.0.min.js"></script>
+  <script src="./js/script.min.js"></script>
+</body>
+</html>

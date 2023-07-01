@@ -1,0 +1,351 @@
+/* モーダルセットアップ */
+#modal_container {
+  display: none;
+  position: fixed;
+  background-color: #0007;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all .3s ease-in-out;
+  z-index: 1000;
+}
+
+#modal_container.active {
+  display: block;
+  opacity: 1;
+  animation: fade-in .3s ease-in-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#modal_close {
+  position: absolute;
+  bottom: 10%;
+  left: calc(15% - 60px);
+  width: 60px;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  z-index: 1000;
+}
+
+#modal_close::before,
+#modal_close::after {
+  content: '';
+  position: absolute;
+  top: -1.5em;
+  left: 10%;
+  width: 80%;
+  height: 4px;
+  background-color: #fff;
+}
+
+#modal_close::before { transform: rotate(45deg); }
+#modal_close::after { transform: rotate(-45deg); }
+
+/* モーダルの中身はここから */
+#modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 58%;
+  height: 80%;
+  overflow-y: auto;
+  background-color: #fff;
+  padding: 0 6%;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.modal-title {
+  font-size: 1.8em;
+}
+
+#modal_book_about {
+  display: flex;
+  /* 折り返し */
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: #a3a3a3 2px dotted;
+}
+
+#modal_book_about>.author {
+  font-weight: bold;
+  margin-right: 2em;
+}
+
+#modal_book_about>.isbn {
+  position: relative;
+  margin-left: auto;
+  color: #a3a3a3;
+  font-size: 0.8em;
+}
+
+#modal_book_about>.isbn>.nothing {
+  background-color: #5c5c5c;
+  color: #fff;
+  padding: 3px 15px 3px 5px ;
+  font-size: 1em;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#modal_img_box {
+  float: left;
+  width: 150px;
+  height: 210px;
+  margin-top: 30px;
+  text-align: center;
+  position: sticky;
+  top: 20px;
+}
+
+#modal_img_box>img {
+  max-width: 150px;
+  max-height: 210px;
+  box-sizing: border-box;
+  border: #000 1px solid;
+}
+
+#modal_book_info  {
+  float: right;
+  width: calc(90% - 150px);
+  margin-bottom: 20px;
+}
+
+#modal_book_info>.item {
+  position: relative;
+  margin: 30px 0 15px;
+}
+
+#modal_book_info>.item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: 8px;
+  height: 100%;
+  background-color: #000;
+}
+
+#modal_book_info>.description {
+  margin: 0px;
+  min-height: 167px;
+}
+
+#detail_table {
+  width: 100%;
+  border-collapse:collapse
+}
+
+.detail_item {
+  border-bottom: #000 1px solid;
+}
+
+.detail_item>td:first-child {
+  width: 25%;
+  vertical-align: top;
+  padding: 5px;
+}
+
+.detail_item>td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  column-gap: 5px;
+  margin: 5px;
+}
+
+.author-kana {
+  font-size: 0.8em;
+  font-weight: normal;
+  margin: 0 1em;
+}
+
+#edit_button {
+  display: flex;
+  min-width: 48px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  white-space: nowrap;
+  user-select: none;
+  color: #fff;
+  background-color: #909090;
+  padding: 0 10px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  border: #5c5c5c 1px solid;
+  cursor: pointer;
+}
+
+#edit_mode {
+  visibility: hidden;
+  width: 1px;
+  margin: 0 -1px 0 0;
+}
+
+#tag_input {
+  width: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#edit_mode:checked ~ #tag_input {
+  width: 100px;
+  border: #5c5c5c 1px solid;
+  border-radius: 5px;
+  padding: 1px 2px;
+}
+
+#edit_mode:checked ~ #edit_text {
+  position: relative;
+  width: 16px;
+}
+
+#edit_mode:checked ~ #edit_text::after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background-image: url(../img/close.svg);
+  background-size: contain;
+}
+
+#modal .tag {
+  transition: all 0.3s ease-in-out;
+}
+
+#modal .checked>.tag {
+  position: relative;
+  padding-right: 20px;
+  color: #1F276E;
+  background-color: #fff;
+  border: #1F276E 1px solid;
+  cursor: default;
+}
+
+#modal .checked>.tag>.delete {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-image: url(../img/remove.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#log_container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.log {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 10px;
+  min-width: 200px;
+  opacity: 0.9;
+  animation: logger 0.5s ease-out forwards;
+}
+
+.log-title,
+.log-content {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 0.8em;
+}
+
+.log-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.log-close::before,
+.log-close::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  top: 50%;
+  left: 0;
+}
+
+.log-close::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.log-close::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+@keyframes logger {
+  from { margin-top: 20px; }
+  to { margin-top: 10px; }
+}
+
+@media screen and (max-width: 1024px) {
+  #modal {
+    width: 80%;
+    height: 80%;
+    max-height: calc(100% - 120px);
+    top: auto;
+    bottom: 80px;
+    transform: translateX(-50%);
+  }
+
+  #modal_close {
+    bottom: 10px;
+    left: calc(50% - 30px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modal-title {
+    font-size: 1.5em;
+  }
+
+  #modal_img_box {
+    float: none;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    position: static;
+  }
+
+  #modal_book_info {
+    float: none;
+    width: 100%;
+  }
+
+  #modal_book_info>.description {
+    min-height: auto;
+  }
+}

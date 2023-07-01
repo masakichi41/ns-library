@@ -1,0 +1,6 @@
+{
+    "<キャンパス名>(ローマ字)": {
+        "table": "<キャンパス名>-library-data",
+        "tags-table": "<キャンパス名>-tags-data"
+    }
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>図書システム | よくある質問</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo {
+      align-items: center;
+    }
+
+    .logo img {
+      width: 170px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .q-and-a {
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 4px 4px rgb(0 0 0 / 2%), 0 2px 3px -2px rgba(0 0 0 / 5%);
+      background-color: #fff;
+    }
+
+    .q-and-a summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 1em 2em 1em 3em;
+      color: #333333;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .q-and-a summary::-webkit-details-marker {
+      display:none;
+    }
+
+    .q-and-a summary::before,
+    .q-and-a p::before {
+      position: absolute;
+      left: 1em;
+      font-weight: 600;
+      font-size: 1.3em;
+    }
+
+    .q-and-a summary::before {
+      color: #75bbff;
+      content: "Q";
+    }
+
+    .q-and-a summary::after {
+      transform: translateY(-25%) rotate(45deg);
+      width: 7px;
+      height: 7px;
+      margin-left: 10px;
+      border-bottom: 3px solid #333333b3;
+      border-right: 3px solid #333333b3;
+      content: '';
+      transition: transform .5s;
+      flex-shrink: 0;
+    }
+
+    .q-and-a[open] summary::after {
+      flex-shrink: 0;
+      transform: rotate(225deg);
+    }
+
+    .q-and-a p {
+      position: relative;
+      transform: translateY(-10px);
+      opacity: 0;
+      margin: 0;
+      max-height: 0;
+      padding: .3em 3em 1.5em;
+      color: #333;
+      transition: transform .5s, opacity .5s;
+    }
+
+    .q-and-a[open] p {
+      transform: none;
+      opacity: 1;
+    }
+
+    .q-and-a p::before {
+      color: #ff8d8d;
+      line-height: 1.2;
+      content: "A";
+    }
+
+    @media screen and (max-width: 600px) {
+      .q-and-a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="https://lookup.lomo.jp/lookup/resource/lookup_logo.webp" alt="Logo">
+      </div>
+    </header>
+    <h1>よくある質問</h1>
+    <details class="q-and-a">
+      <summary>N/S高図書検索システムとは？</summary>
+      <p>N/S高の各キャンパスにある本をリスト化し、検索できるようにしたものです。</p>
+    </details>
+    <details class="q-and-a">
+      <summary>所属キャンパス以外の図書が見たい</summary>
+      <p>原則所属キャンパスのみ使用を許可しています。他キャンパスへのアクセスはご遠慮ください。</p>
+    </details>
+    <details class="q-and-a">
+      <summary>他人にこのサイトを教えてもいい？</summary>
+      <p>
+        N/S高の情報を扱っていますので、基本的に禁止しています。<br>
+        公開したことによって発生した損害に関しては一切の保証をいたしかねます。詳しくは<a href="./site-terms-of-use.html">サイト使用条件</a>をご確認ください。<br>
+        なお、同じキャンパスの人は問題ありません、ぜひ宣伝してください。
+      </p>
+    </details>
+    <details class="q-and-a">
+      <summary>推奨ブラウザを教えて欲しい</summary>
+      <p>
+        Windows: Chrome<br>
+        Mac: Safari・Chrome<br>
+        Android: Chrome<br>
+        iOS: Safari<br>
+        ※その他のブラウザでも動作する可能性はありますが、動作保証はしていません。
+      </p>
+    </details>
+    <details class="q-and-a">
+      <summary>「ランダム表示（20件）」以外何も表示されない</summary>
+      <p>システムに不具合が生じている可能性があります。復旧まで今しばらくお待ちください。</p>
+    </details>
+    <details class="q-and-a">
+      <summary>全ての本が見たい</summary>
+      <p>
+        最下部にある、「全ての本を表示」を開いてください。<br>
+        検索バーで何も入れずにEnterを押すか、空白を入れて検索しても全ての本が表示されます。
+      </p>
+    </details>
+    <details class="q-and-a">
+      <summary>最初のランダム表示をもう一度開きたい</summary>
+      <p>最下部にある、トップからもう一度開いて見てください。</p>
+    </details>
+    <details class="q-and-a">
+      <summary>検索結果がおかしい</summary>
+      <p><a href="https://forms.gle/MLAnrJkb94JkJka8A" target="_blank">お問い合わせ</a>にてスクリーンショット、URLと共にご連絡ください。</p>
+    </details>
+    <details class="q-and-a">
+      <summary>本の情報が間違っている</summary>
+      <p>本の情報が間違っている場合は、<a href="https://forms.gle/MLAnrJkb94JkJka8A" target="_blank">お問い合わせ</a>にてご連絡ください。</p>
+    </details>
+    <details class="q-and-a">
+      <summary>タグの追加に制限はある？</summary>
+      <p>原則制限はありませんが、荒らし行為等が行われた場合無期限の制限を設ける場合がございます。<br>節度を守ったご利用にご協力ください。</p>
+    </details>
+    <details class="q-and-a">
+      <summary>本のタグの追加・削除ができない</summary>
+      <p>タグは指定されたもの以外追加・削除することができません。また、通信環境が悪い場合追加に失敗する場合がございます。</p>
+    </details>
+    <details class="q-and-a">
+      <summary>指定されたもの以外のタグを追加したい</summary>
+      <p>指定されたもの以外のタグを追加したい場合は、<a href="https://forms.gle/MLAnrJkb94JkJka8A" target="_blank">お問い合わせ</a>までお願いします。<br>なお、適切なタグかどうかを審査してから追加するため、対応に数日かかる場合がございます。</p>
+    </details>
+    <details class="q-and-a">
+      <summary>こんな機能を追加して欲しい</summary>
+      <p><a href="https://forms.gle/MLAnrJkb94JkJka8A" target="_blank">お問い合わせ</a>にてご連絡ください。<br>可能な限り対応いたします。</p>
+    </details>
+    <p>こちらで解決しない場合は<a href="https://forms.gle/MLAnrJkb94JkJka8A" target="_blank">お問い合わせ</a>までよろしくお願いします</p>
+  </div>
+  <script src="./js/jquery-3.7.0.min.js"></script>
+  <script>
+    $(document).on("click", ".q-and-a:not([open])", function() {
+      $(this).find("p").css("max-height", "0").animate({
+        "max-height": "300px"
+      }, 500);
+    });
+  </script>
+</body>
+</html>
