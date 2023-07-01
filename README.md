@@ -30,7 +30,7 @@ N/S高の各キャンパスの本を見れるようなWebアプリケーショ�
 │   ├── book-cover
 │   │   └── <isbn>.jpg
 │   ├── 600 campus.json
-│   └── 600 tags.json
+│   └── tags.json
 ├── img
 │   ├── arrow.svg
 │   ├── book.svg
